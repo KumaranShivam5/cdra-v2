@@ -144,24 +144,15 @@
         <div class="row no-padding bg-black">
             <div class="container">
                 <div class="row black-row top-padded bg-black">
-                    <div class="col-lg-7" id="register">
-                        <span class="title lg white">Register</span>
-                        <form class="form">
-                            <input placeholder="Name">
-                            <input placeholder="Age">
-                            <input placeholder="contact number">
-                            <input placeholder="category">
-                            <button type="submit">Register</button>
-                        </form>
-                    </div>
-                    <div class="col-lg-5" id="enquiry">
+                    <div class="col-lg-12">
                         <span class="title lg white">Enquiry</span>
-                        <form class="form">
-                            <input placeholder="Name">
-                            <input placeholder="Subject">
-                            <input placeholder="contact number">
-                            <textarea placeholder="Message"></textarea>
-                            <button type="submit">Register</button>
+                        <form class="form" id="enq-form">
+                            <input placeholder="Name" name='name'>
+                            <input placeholder="mail" name='mail'>
+                            <input placeholder="contact number" name='contact'>
+                            <input placeholder="Subject" name='subject'>
+                            <textarea placeholder="Message" name='message'></textarea>
+                            <button id="submit-enq-form" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -217,6 +208,40 @@
             $('.mb-menu').removeClass('open');
             $('.mb-menu').addClass('closed');
         }
+    </script>
+    <script src="js/jquery.serialize-object.min.js"></script>
+    <script>
+        var $form1 = $('form#enq-form'),
+            url = "https://script.google.com/macros/s/AKfycbz4_TptUem6zPylIHjAIskqF5onIvfX_6gOCBw_3J_yEpBVKGnD/exec"
+
+        $('#submit-enq-form').on('click', function (e) {
+            e.preventDefault();
+            var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form1.serializeObject()
+            }).success(
+                function (response) { window.alert('Thank you for CDRA, we will reach you soon.'); }
+            );
+        })
+
+        /*
+        var $form2 = $('form#reg-form'),
+            url = "https://script.google.com/macros/s/AKfycbyDSEbsjD9Qz1CggyketknZlSOdspgLGqcFGqgANSovnf9mtcXe/exec"
+
+        $('#submit-reg-form').on('click', function (e) {
+            e.preventDefault();
+            var jqxhr = $.ajax({
+                url: url,
+                method: "GET",
+                dataType: "json",
+                data: $form2.serializeObject()
+            }).success(
+                function (response) { window.alert('Registration Request submitted, we will contact you soon.'); }
+            );
+        })
+        */
     </script>
 </body>
 

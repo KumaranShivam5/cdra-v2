@@ -159,6 +159,9 @@ textarea{min-height: 150px;}
   font-size: 3rem;
   /*! padding: 10px; */
   }
+  .form {
+    align-items: center;
+  }
   .subtitle{
     
   font-size: 1rem;
