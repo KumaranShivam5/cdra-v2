@@ -260,4 +260,7 @@ textarea{min-height: 150px;}
   background: black;
   padding: 8px;
   }
+  .social-container{
+    flex-direction: column;
+  }
 } 
