@@ -36,14 +36,75 @@
     <script src="https://kit.fontawesome.com/b1edde977d.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/animations.css">
+    <style>
+
+        body{max-height: 100vh;max-width: 100vw;overflow: hidden;}
+        .loading-cover {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 99999999999;
+            /* background-color: black; */
+            flex-direction: column;
+            color: white;
+            background-image: url('images/bg/hud_blue.jpg');
+            background-size: cover;
+        }
+        .loading-cover-gradient{
+            background: rgba(0, 0, 0, 0.74);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            flex-direction: column;
+            color: white;
+        }
+        .loading-cover .banner{
+            margin: 1vh;
+            max-width: 70vw;
+        }
+
+        .loading-content{
+            color: white;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family:  'Montserrat',sans-serif !important;
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+        }
+        .whatsapp-block{
+            display: block;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: rgb(34, 245, 129);
+        }
+    </style>
 
 
 </head>
 
 <body>
-    <div style="position:fixed;width:100vw;height:120vh;background:white;z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column;">
-        <h1>Welcom to Vercil Hosting</h1><br>
-        <p>(error_code) <br> Validity for this Domain http://www.cdra.now.sh has expired</p>
+    <div class="loading-cover">
+        <div class="loading-cover-gradient">
+            <img src="../../logo/large-logo-dark.svg" alt="" class="banner">
+        <div class="loading-content">
+            Website Coming soon. <br> 
+            <span><i class="fa fa-phone" aria-hidden="true"></i>
+                : <a href="tel:+917909092464"></a></span>
+       
+        </div>
+        </div>
+        <a href="https://wa.me/917909092464?text=I'm%20interested%20in%20joining%20the%20Pinaka%20Rifle%20Shooting%20Club" class="whatsapp-block"><i class="fa fa-2x fa-whatsapp"></i><br></h5>
     </div>
     <div class="container-fluid no-padding" id="home">
         <div class="row no-padding bg-gray">
